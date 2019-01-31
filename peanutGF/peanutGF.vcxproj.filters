@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\原生WinSDK封装">
+      <UniqueIdentifier>{3ebed6f3-6a0f-4216-b1d7-e470db3766c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\原生WinSDK封装">
+      <UniqueIdentifier>{4838694f-d7b3-42c4-9277-5ba4f3b7b85d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\原生WinSDK封装\CGDI">
+      <UniqueIdentifier>{a452a0fd-33d7-47a2-bc44-744d3dcdf71f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\原生WinSDK封装\CGDI">
+      <UniqueIdentifier>{a6630b38-4bfc-4f5b-ab34-47169dce5864}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\原生WinSDK封装\MK_Input">
+      <UniqueIdentifier>{fd3d5516-f0fb-4801-a439-1359d316d5af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\原生WinSDK封装\MK_Input">
+      <UniqueIdentifier>{73b72f6a-3e18-49df-ae5a-5bcc6e585c2b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BasicWin.cpp">
+      <Filter>源文件\原生WinSDK封装</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Cgdi.cpp">
+      <Filter>源文件\原生WinSDK封装\CGDI</Filter>
+    </ClCompile>
+    <ClCompile Include="vector2D.cpp">
+      <Filter>源文件\原生WinSDK封装\CGDI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BasicWin.h">
+      <Filter>头文件\原生WinSDK封装</Filter>
+    </ClInclude>
+    <ClInclude Include="Cgdi.h">
+      <Filter>头文件\原生WinSDK封装\CGDI</Filter>
+    </ClInclude>
+    <ClInclude Include="vector2D.h">
+      <Filter>头文件\原生WinSDK封装\CGDI</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>头文件\原生WinSDK封装\CGDI</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
