@@ -99,48 +99,53 @@ namespace pnGF{
 		HBRUSH  m_LightBlueBrush;
 		HBRUSH  m_DarkGreenBrush;
 
-		HDC    m_hdc;
+		HDC  *  m_hdc;
+		HDC  m_memDc; //双缓冲
+		HBITMAP m_bmp;
+		HDC	   m_nhdc; //默认单独绘制
+
+		int clientW, clientH;
 
 		Cgdi();
 
 		Cgdi(const Cgdi&);
 		Cgdi& operator=(const Cgdi&);
 
-		void BlackPen() { if (m_hdc) { SelectObject(m_hdc, m_BlackPen); } }
-		void WhitePen() { if (m_hdc) { SelectObject(m_hdc, m_WhitePen); } }
-		void RedPen() { if (m_hdc) { SelectObject(m_hdc, m_RedPen); } }
-		void GreenPen() { if (m_hdc) { SelectObject(m_hdc, m_GreenPen); } }
-		void BluePen() { if (m_hdc) { SelectObject(m_hdc, m_BluePen); } }
-		void GreyPen() { if (m_hdc) { SelectObject(m_hdc, m_GreyPen); } }
-		void PinkPen() { if (m_hdc) { SelectObject(m_hdc, m_PinkPen); } }
-		void YellowPen() { if (m_hdc) { SelectObject(m_hdc, m_YellowPen); } }
-		void OrangePen() { if (m_hdc) { SelectObject(m_hdc, m_OrangePen); } }
-		void PurplePen() { if (m_hdc) { SelectObject(m_hdc, m_PurplePen); } }
-		void BrownPen() { if (m_hdc) { SelectObject(m_hdc, m_BrownPen); } }
+		void BlackPen() { if (m_hdc) { SelectObject(*m_hdc, m_BlackPen); } }
+		void WhitePen() { if (m_hdc) { SelectObject(*m_hdc, m_WhitePen); } }
+		void RedPen() { if (m_hdc) { SelectObject(*m_hdc, m_RedPen); } }
+		void GreenPen() { if (m_hdc) { SelectObject(*m_hdc, m_GreenPen); } }
+		void BluePen() { if (m_hdc) { SelectObject(*m_hdc, m_BluePen); } }
+		void GreyPen() { if (m_hdc) { SelectObject(*m_hdc, m_GreyPen); } }
+		void PinkPen() { if (m_hdc) { SelectObject(*m_hdc, m_PinkPen); } }
+		void YellowPen() { if (m_hdc) { SelectObject(*m_hdc, m_YellowPen); } }
+		void OrangePen() { if (m_hdc) { SelectObject(*m_hdc, m_OrangePen); } }
+		void PurplePen() { if (m_hdc) { SelectObject(*m_hdc, m_PurplePen); } }
+		void BrownPen() { if (m_hdc) { SelectObject(*m_hdc, m_BrownPen); } }
 
-		void DarkGreenPen() { if (m_hdc) { SelectObject(m_hdc, m_DarkGreenPen); } }
-		void LightBluePen() { if (m_hdc) { SelectObject(m_hdc, m_LightBluePen); } }
-		void LightGreyPen() { if (m_hdc) { SelectObject(m_hdc, m_LightGreyPen); } }
-		void LightPinkPen() { if (m_hdc) { SelectObject(m_hdc, m_LightPinkPen); } }
+		void DarkGreenPen() { if (m_hdc) { SelectObject(*m_hdc, m_DarkGreenPen); } }
+		void LightBluePen() { if (m_hdc) { SelectObject(*m_hdc, m_LightBluePen); } }
+		void LightGreyPen() { if (m_hdc) { SelectObject(*m_hdc, m_LightGreyPen); } }
+		void LightPinkPen() { if (m_hdc) { SelectObject(*m_hdc, m_LightPinkPen); } }
 
-		void ThickBlackPen() { if (m_hdc) { SelectObject(m_hdc, m_ThickBlackPen); } }
-		void ThickWhitePen() { if (m_hdc) { SelectObject(m_hdc, m_ThickWhitePen); } }
-		void ThickRedPen() { if (m_hdc) { SelectObject(m_hdc, m_ThickRedPen); } }
-		void ThickGreenPen() { if (m_hdc) { SelectObject(m_hdc, m_ThickGreenPen); } }
-		void ThickBluePen() { if (m_hdc) { SelectObject(m_hdc, m_ThickBluePen); } }
+		void ThickBlackPen() { if (m_hdc) { SelectObject(*m_hdc, m_ThickBlackPen); } }
+		void ThickWhitePen() { if (m_hdc) { SelectObject(*m_hdc, m_ThickWhitePen); } }
+		void ThickRedPen() { if (m_hdc) { SelectObject(*m_hdc, m_ThickRedPen); } }
+		void ThickGreenPen() { if (m_hdc) { SelectObject(*m_hdc, m_ThickGreenPen); } }
+		void ThickBluePen() { if (m_hdc) { SelectObject(*m_hdc, m_ThickBluePen); } }
 
-		void BlackBrush() { if (m_hdc)SelectObject(m_hdc, GetStockObject(BLACK_BRUSH)); }
-		void WhiteBrush() { if (m_hdc)SelectObject(m_hdc, GetStockObject(WHITE_BRUSH)); }
-		void HollowBrush() { if (m_hdc)SelectObject(m_hdc, GetStockObject(HOLLOW_BRUSH)); }
-		void GreenBrush() { if (m_hdc)SelectObject(m_hdc, m_GreenBrush); }
-		void RedBrush() { if (m_hdc)SelectObject(m_hdc, m_RedBrush); }
-		void BlueBrush() { if (m_hdc)SelectObject(m_hdc, m_BlueBrush); }
-		void GreyBrush() { if (m_hdc)SelectObject(m_hdc, m_GreyBrush); }
-		void BrownBrush() { if (m_hdc)SelectObject(m_hdc, m_BrownBrush); }
-		void YellowBrush() { if (m_hdc)SelectObject(m_hdc, m_YellowBrush); }
-		void LightBlueBrush() { if (m_hdc)SelectObject(m_hdc, m_LightBlueBrush); }
-		void DarkGreenBrush() { if (m_hdc)SelectObject(m_hdc, m_DarkGreenBrush); }
-		void OrangeBrush() { if (m_hdc)SelectObject(m_hdc, m_OrangeBrush); }
+		void BlackBrush() { if (m_hdc)SelectObject(*m_hdc, GetStockObject(BLACK_BRUSH)); }
+		void WhiteBrush() { if (m_hdc)SelectObject(*m_hdc, GetStockObject(WHITE_BRUSH)); }
+		void HollowBrush() { if (m_hdc)SelectObject(*m_hdc, GetStockObject(HOLLOW_BRUSH)); }
+		void GreenBrush() { if (m_hdc)SelectObject(*m_hdc, m_GreenBrush); }
+		void RedBrush() { if (m_hdc)SelectObject(*m_hdc, m_RedBrush); }
+		void BlueBrush() { if (m_hdc)SelectObject(*m_hdc, m_BlueBrush); }
+		void GreyBrush() { if (m_hdc)SelectObject(*m_hdc, m_GreyBrush); }
+		void BrownBrush() { if (m_hdc)SelectObject(*m_hdc, m_BrownBrush); }
+		void YellowBrush() { if (m_hdc)SelectObject(*m_hdc, m_YellowBrush); }
+		void LightBlueBrush() { if (m_hdc)SelectObject(*m_hdc, m_LightBlueBrush); }
+		void DarkGreenBrush() { if (m_hdc)SelectObject(*m_hdc, m_DarkGreenBrush); }
+		void OrangeBrush() { if (m_hdc)SelectObject(*m_hdc, m_OrangeBrush); }
 	public:
 		
 		~Cgdi();
@@ -155,8 +160,9 @@ namespace pnGF{
 		void StartDrawing(HDC hdc) {
 			assert(m_hdc == NULL);
 
-			m_hdc = hdc;
-
+			m_nhdc = hdc;
+			m_memDc = CreateCompatibleDC(m_nhdc);
+			m_hdc = &m_nhdc;
 			//获得当前画笔
 			m_OldPen = (HPEN)SelectObject(hdc, m_BlackPen);
 
@@ -176,6 +182,8 @@ namespace pnGF{
 			SelectObject(hdc, m_OldPen);
 			SelectObject(hdc, m_OldBrush);
 			m_hdc = NULL;
+			m_memDc = NULL;
+			m_nhdc = NULL;
 		}
 
 		//文本绘制相关
@@ -185,7 +193,7 @@ namespace pnGF{
 		// 参数: 位置信息, 字符内容
 		// 返回值:  void
 		void TextAtPos(int x, int y, const std::string &str) {
-			TextOut(m_hdc, x, y, str.c_str(), (int)str.size());
+			TextOut(*m_hdc, x, y, str.c_str(), (int)str.size());
 		}
 
 		//-------------------------
@@ -193,22 +201,22 @@ namespace pnGF{
 		// 参数: 位置信息, 字符内容
 		// 返回值:  void
 		void TextAtPos(double x, double y, const std::string &str) {
-			TextOut(m_hdc, (int)x, (int)y, str.c_str(), (int)str.size());
+			TextOut(*m_hdc, (int)x, (int)y, str.c_str(), (int)str.size());
 		}
 		//-------------------------
 		// 函数名:  TextAtPos
 		// 参数: 位置信息, 字符内容
 		// 返回值:  void
 		void TextAtPos(Vector2D pos, const std::string &str) {
-			TextOut(m_hdc, (int)pos.x, (int)pos.y, str.c_str(), (int)str.size());
+			TextOut(*m_hdc, (int)pos.x, (int)pos.y, str.c_str(), (int)str.size());
 		}
 
-		void TransparentText() { SetBkMode(m_hdc, TRANSPARENT); }
+		void TransparentText() { SetBkMode(*m_hdc, TRANSPARENT); }
 
-		void OpaqueText() { SetBkMode(m_hdc, OPAQUE); }
+		void OpaqueText() { SetBkMode(*m_hdc, OPAQUE); }
 
-		void TextColor(int color) { assert(color < NumColors); SetTextColor(m_hdc, colors[color]); }
-		void TextColor(int r, int g, int b) { SetTextColor(m_hdc, RGB(r, g, b)); }
+		void TextColor(int color) { assert(color < NumColors); SetTextColor(*m_hdc, colors[color]); }
+		void TextColor(int r, int g, int b) { SetTextColor(*m_hdc, RGB(r, g, b)); }
 
 
 		//-------------------------
@@ -216,10 +224,10 @@ namespace pnGF{
 		// 参数: pos 描述位置,color
 		// 返回值:  void
 		void DrawDot(Vector2D pos, COLORREF color) {
-			SetPixel(m_hdc, (int)pos.x, (int)pos.y, color);
+			SetPixel(*m_hdc, (int)pos.x, (int)pos.y, color);
 		}
 		void DrawDot(int x, int y, COLORREF color) {
-			SetPixel(m_hdc, x, y, color);
+			SetPixel(*m_hdc, x, y, color);
 		}
 
 
@@ -228,16 +236,16 @@ namespace pnGF{
 		// 参数: from , to
 		// 返回值:  void
 		void Line(Vector2D from, Vector2D to) {
-			MoveToEx(m_hdc, (int)from.x, (int)from.y, NULL);
-			LineTo(m_hdc, (int)to.x, (int)to.y);
+			MoveToEx(*m_hdc, (int)from.x, (int)from.y, NULL);
+			LineTo(*m_hdc, (int)to.x, (int)to.y);
 		}
 		void Line(int a, int b, int x, int y) {
-			MoveToEx(m_hdc, a, b, NULL);
-			LineTo(m_hdc, x, y);
+			MoveToEx(*m_hdc, a, b, NULL);
+			LineTo(*m_hdc, x, y);
 		}
 		void Line(double a, double b, double x, double y) {
-			MoveToEx(m_hdc, (int)a, (int)b, NULL);
-			LineTo(m_hdc, x, y);
+			MoveToEx(*m_hdc, (int)a, (int)b, NULL);
+			LineTo(*m_hdc, x, y);
 		}
 
 
@@ -248,10 +256,10 @@ namespace pnGF{
 		void PolyLine(const std::vector<Vector2D>& points) {
 			if (points.size() < 2)
 				return;
-			MoveToEx(m_hdc, (int)points[0].x, (int)points[0].y, NULL);
+			MoveToEx(*m_hdc, (int)points[0].x, (int)points[0].y, NULL);
 			for (unsigned int p = 1;p<points.size();p++)
 			{
-				LineTo(m_hdc, (int)points[p].x, (int)points[p].y);
+				LineTo(*m_hdc, (int)points[p].x, (int)points[p].y);
 			}
 		}
 
@@ -271,8 +279,8 @@ namespace pnGF{
 			Vector2D ArrowPoint2 = CrossingPoint - (norm.Perp() * 0.4f * size);
 
 			//绘制封闭线
-			MoveToEx(m_hdc, (int)from.x, (int)from.y, NULL);
-			LineTo(m_hdc, (int)CrossingPoint.x, (int)CrossingPoint.y);
+			MoveToEx(*m_hdc, (int)from.x, (int)from.y, NULL);
+			LineTo(*m_hdc, (int)CrossingPoint.x, (int)CrossingPoint.y);
 
 			//绘制箭头
 			POINT p[3];
@@ -281,13 +289,13 @@ namespace pnGF{
 			p[1] = VectorToPOINT(ArrowPoint2);
 			p[2] = VectorToPOINT(to);
 
-			SetPolyFillMode(m_hdc, WINDING);
-			Polygon(m_hdc, p, 3);
+			SetPolyFillMode(*m_hdc, WINDING);
+			Polygon(*m_hdc, p, 3);
 		}
 
 		void Circle(Vector2D pos, double radius)
 		{
-			Ellipse(m_hdc,
+			Ellipse(*m_hdc,
 				(int)(pos.x - radius),
 				(int)(pos.y - radius),
 				(int)(pos.x + radius + 1),
@@ -296,7 +304,7 @@ namespace pnGF{
 
 		void Circle(double x, double y, double radius)
 		{
-			Ellipse(m_hdc,
+			Ellipse(*m_hdc,
 				(int)(x - radius),
 				(int)(y - radius),
 				(int)(x + radius + 1),
@@ -305,7 +313,7 @@ namespace pnGF{
 
 		void Circle(int x, int y, double radius)
 		{
-			Ellipse(m_hdc,
+			Ellipse(*m_hdc,
 				(int)(x - radius),
 				(int)(y - radius),
 				(int)(x + radius + 1),
@@ -357,15 +365,34 @@ namespace pnGF{
 		void RefreshScreen(HWND hWnd) {
 			RECT client;
 			GetClientRect(hWnd, &client);
-			//HBRUSH newBrush = CreateSolidBrush(RGB(255, 0, 0));
-			//newBrush = (HBRUSH)SelectObject(m_hdc, newBrush);
 			BlackBrush();
-			Rectangle(m_hdc, client.left, client.top, client.right, client.bottom);
+			Rectangle(*m_hdc, client.left, client.top, client.right, client.bottom);
 
+		}
+
+		void DoubleBuffer(bool isOpen) {
+			if (isOpen)
+			{
+				m_hdc = &m_memDc;
+				m_bmp = CreateCompatibleBitmap(m_nhdc, 1024, 640);
+				SelectObject(m_memDc, m_bmp);
+			}
+			else
+			{
+				m_hdc = &m_nhdc;
+			}
+		}
+
+		void CopyOffBuffer(HWND hWnd) {
+			RECT client;
+			GetClientRect(hWnd, &client);
+			int nWidth = client.right - client.left;
+			int nHeight = client.bottom - client.top;
+			BitBlt(m_nhdc, client.left, client.top, nWidth, nHeight, *m_hdc, 0, 0, SRCCOPY);
 		}
 	};
 
 	
 }
 //static const pnGF::Cgdi& gdi = pnGF::Cgdi::Instance();
-static pnGF::Cgdi* mgid = pnGF::Cgdi::Instance();
+static pnGF::Cgdi* mgdi = pnGF::Cgdi::Instance();

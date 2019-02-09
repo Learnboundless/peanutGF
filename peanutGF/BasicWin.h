@@ -28,6 +28,8 @@ class BasicWin
 		HWND RunWindow(string jsonPath);
 		//获取刷新频率
 		float GetFPS();
+		//获取屏幕分辨率
+		RECT GetScreenInfo();
 		//鼠标事件
 		bool mouseClick = false;
 	private:

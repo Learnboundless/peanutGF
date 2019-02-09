@@ -1,0 +1,86 @@
+.TH "pnGF::Vector2D" 3 "Sat Feb 2 2019" "Version 1.0.0" "花生游戏框架" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pnGF::Vector2D
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVector2D\fP (double a, double b)"
+.br
+.ti -1c
+.RI "void \fBZero\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisZero\fP () const"
+.br
+.ti -1c
+.RI "double \fBLength\fP () const"
+.br
+.ti -1c
+.RI "double \fBLengthSq\fP () const"
+.br
+.ti -1c
+.RI "void \fBNormalize\fP ()"
+.br
+.ti -1c
+.RI "double \fBDot\fP (const \fBVector2D\fP &v2) const"
+.br
+.ti -1c
+.RI "int \fBSign\fP (const \fBVector2D\fP &v2) const"
+.br
+.ti -1c
+.RI "\fBVector2D\fP \fBPerp\fP () const"
+.br
+.ti -1c
+.RI "void \fBTruncate\fP (double max)"
+.br
+.ti -1c
+.RI "double \fBDistance\fP (const \fBVector2D\fP &v2) const"
+.br
+.ti -1c
+.RI "double \fBDistanceSq\fP (const \fBVector2D\fP &v2) const"
+.br
+.ti -1c
+.RI "void \fBReflect\fP (const \fBVector2D\fP &norm)"
+.br
+.ti -1c
+.RI "\fBVector2D\fP \fBGetReverse\fP () const"
+.br
+.ti -1c
+.RI "const \fBVector2D\fP & \fBoperator+=\fP (const \fBVector2D\fP &rhs)"
+.br
+.ti -1c
+.RI "const \fBVector2D\fP & \fBoperator\-=\fP (const \fBVector2D\fP &rhs)"
+.br
+.ti -1c
+.RI "const \fBVector2D\fP & \fBoperator*=\fP (const double &rhs)"
+.br
+.ti -1c
+.RI "const \fBVector2D\fP & \fBoperator/=\fP (const double &rhs)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBVector2D\fP &rhs)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBVector2D\fP &rhs)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBx\fP"
+.br
+.ti -1c
+.RI "double \fBy\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 花生游戏框架 from the source code\&.

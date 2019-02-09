@@ -70,7 +70,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>..\Extern\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\Extern\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -79,7 +82,7 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Winmm.lib;d3d9.lib;d3dx9.lib;dinput8.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -124,13 +127,19 @@
   <ItemGroup>
     <ClInclude Include="BasicWin.h" />
     <ClInclude Include="Cgdi.h" />
+    <ClInclude Include="dxUnity.h" />
+    <ClInclude Include="easyDx.h" />
+    <ClInclude Include="redObj.h" />
+    <ClInclude Include="renderQueue.h" />
     <ClInclude Include="utils.h" />
     <ClInclude Include="vector2D.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BasicWin.cpp" />
     <ClCompile Include="Cgdi.cpp" />
+    <ClCompile Include="easyDx.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="renderQueue.cpp" />
     <ClCompile Include="vector2D.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,0 +1,113 @@
+.TH "pnGF::Cgdi" 3 "Sat Feb 2 2019" "Version 1.0.0" "花生游戏框架" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pnGF::Cgdi
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum { \fBred\fP, \fBblue\fP, \fBgreen\fP, \fBblack\fP, \fBpink\fP, \fBgrey\fP, \fByellow\fP, \fBorange\fP, \fBpurple\fP, \fBbrown\fP, \fBwhite\fP, \fBdark_green\fP, \fBlight_blue\fP, \fBlight_grey\fP, \fBlight_pink\fP, \fBhollow\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBNumPenColors\fP () const"
+.br
+.ti -1c
+.RI "void \fBStartDrawing\fP (HDC hdc)"
+.br
+.ti -1c
+.RI "void \fBStopDrawing\fP (HDC hdc)"
+.br
+.ti -1c
+.RI "void \fBTextAtPos\fP (int x, int y, const std::string &str)"
+.br
+.ti -1c
+.RI "void \fBTextAtPos\fP (double x, double y, const std::string &str)"
+.br
+.ti -1c
+.RI "void \fBTextAtPos\fP (\fBVector2D\fP pos, const std::string &str)"
+.br
+.ti -1c
+.RI "void \fBTransparentText\fP ()"
+.br
+.ti -1c
+.RI "void \fBOpaqueText\fP ()"
+.br
+.ti -1c
+.RI "void \fBTextColor\fP (int color)"
+.br
+.ti -1c
+.RI "void \fBTextColor\fP (int r, int g, int b)"
+.br
+.ti -1c
+.RI "void \fBDrawDot\fP (\fBVector2D\fP pos, COLORREF color)"
+.br
+.ti -1c
+.RI "void \fBDrawDot\fP (int x, int y, COLORREF color)"
+.br
+.ti -1c
+.RI "void \fBLine\fP (\fBVector2D\fP from, \fBVector2D\fP to)"
+.br
+.ti -1c
+.RI "void \fBLine\fP (int a, int b, int x, int y)"
+.br
+.ti -1c
+.RI "void \fBLine\fP (double a, double b, double x, double y)"
+.br
+.ti -1c
+.RI "void \fBPolyLine\fP (const std::vector< \fBVector2D\fP > &points)"
+.br
+.ti -1c
+.RI "void \fBLineWithArrow\fP (\fBVector2D\fP from, \fBVector2D\fP to, double size)"
+.br
+.ti -1c
+.RI "void \fBCircle\fP (\fBVector2D\fP pos, double radius)"
+.br
+.ti -1c
+.RI "void \fBCircle\fP (double x, double y, double radius)"
+.br
+.ti -1c
+.RI "void \fBCircle\fP (int x, int y, double radius)"
+.br
+.ti -1c
+.RI "void \fBSetPenColor\fP (int color)"
+.br
+.ti -1c
+.RI "void \fBSetBrushColor\fP (int color)"
+.br
+.ti -1c
+.RI "void \fBRefreshScreen\fP (HWND hWnd)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBCgdi\fP * \fBInstance\fP ()"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "void pnGF::Cgdi::LineWithArrow (\fBVector2D\fP from, \fBVector2D\fP to, double size)\fC [inline]\fP"
+
+.PP
+ 函数名: LineWithArrow 绘制一个箭头 参数: -from ,-to ,-size 大小 返回值: void 
+.SS "void pnGF::Cgdi::StartDrawing (HDC hdc)\fC [inline]\fP"
+
+.PP
+ 函数名: StartDrawing 参数: HDC 环境设备句柄 返回值: -void 说明: 在每次绘制前都调用此方法 
+.SS "void pnGF::Cgdi::StopDrawing (HDC hdc)\fC [inline]\fP"
+
+.PP
+ 函数名: StopDrawing 参数: HDC 环境设备句柄 返回值: -void 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 花生游戏框架 from the source code\&.

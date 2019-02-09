@@ -1,0 +1,136 @@
+\section{pn\+GF\+:\+:Cgdi Class Reference}
+\label{classpn_g_f_1_1_cgdi}\index{pn\+G\+F\+::\+Cgdi@{pn\+G\+F\+::\+Cgdi}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classpn_g_f_1_1_cgdi_a7edc878c6586395e16852e6b92ca5590}} 
+enum \{ \newline
+{\bfseries red}, 
+{\bfseries blue}, 
+{\bfseries green}, 
+{\bfseries black}, 
+\newline
+{\bfseries pink}, 
+{\bfseries grey}, 
+{\bfseries yellow}, 
+{\bfseries orange}, 
+\newline
+{\bfseries purple}, 
+{\bfseries brown}, 
+{\bfseries white}, 
+{\bfseries dark\+\_\+green}, 
+\newline
+{\bfseries light\+\_\+blue}, 
+{\bfseries light\+\_\+grey}, 
+{\bfseries light\+\_\+pink}, 
+{\bfseries hollow}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classpn_g_f_1_1_cgdi_ab738b8b33de6399326895c1031934043}} 
+int {\bfseries Num\+Pen\+Colors} () const
+\item 
+void \textbf{ Start\+Drawing} (H\+DC hdc)
+\item 
+void \textbf{ Stop\+Drawing} (H\+DC hdc)
+\item 
+\mbox{\label{classpn_g_f_1_1_cgdi_a9d1e1650570a89e81d350f22446143f4}} 
+void {\bfseries Text\+At\+Pos} (int x, int y, const std\+::string \&str)
+\item 
+\mbox{\label{classpn_g_f_1_1_cgdi_a2b8d087797daf66e618122dd1fba4d0f}} 
+void {\bfseries Text\+At\+Pos} (double x, double y, const std\+::string \&str)
+\item 
+\mbox{\label{classpn_g_f_1_1_cgdi_a9002a8d9df0c974ca38779188aafcb58}} 
+void {\bfseries Text\+At\+Pos} (\textbf{ Vector2D} pos, const std\+::string \&str)
+\item 
+\mbox{\label{classpn_g_f_1_1_cgdi_a480c0f8d5fb396b8bd1dbdd9024eb5b7}} 
+void {\bfseries Transparent\+Text} ()
+\item 
+\mbox{\label{classpn_g_f_1_1_cgdi_aa6c54457201672b8a73102d868234ee0}} 
+void {\bfseries Opaque\+Text} ()
+\item 
+\mbox{\label{classpn_g_f_1_1_cgdi_a3a616c141ac76ed5fe68f7dd91d40fa9}} 
+void {\bfseries Text\+Color} (int color)
+\item 
+\mbox{\label{classpn_g_f_1_1_cgdi_a8ecb7bc685deed09e6fc760b44be4dc3}} 
+void {\bfseries Text\+Color} (int r, int g, int b)
+\item 
+\mbox{\label{classpn_g_f_1_1_cgdi_a80eefa4e5d571a4add95241e9dcedd4e}} 
+void {\bfseries Draw\+Dot} (\textbf{ Vector2D} pos, C\+O\+L\+O\+R\+R\+EF color)
+\item 
+\mbox{\label{classpn_g_f_1_1_cgdi_a472ed45bf374d0c70188fe33459b97c1}} 
+void {\bfseries Draw\+Dot} (int x, int y, C\+O\+L\+O\+R\+R\+EF color)
+\item 
+\mbox{\label{classpn_g_f_1_1_cgdi_a0570b8d1a06199fc271cab9a2cc3d369}} 
+void {\bfseries Line} (\textbf{ Vector2D} from, \textbf{ Vector2D} to)
+\item 
+\mbox{\label{classpn_g_f_1_1_cgdi_a48b8f9e6717fe2cf7c5112c339a3277c}} 
+void {\bfseries Line} (int a, int b, int x, int y)
+\item 
+\mbox{\label{classpn_g_f_1_1_cgdi_a9d1fc7b4fc3d1aaab58cf32eb8b60eb7}} 
+void {\bfseries Line} (double a, double b, double x, double y)
+\item 
+\mbox{\label{classpn_g_f_1_1_cgdi_aae27cf8c2aae44a11e20af455aa0dfc7}} 
+void {\bfseries Poly\+Line} (const std\+::vector$<$ \textbf{ Vector2D} $>$ \&points)
+\item 
+void \textbf{ Line\+With\+Arrow} (\textbf{ Vector2D} from, \textbf{ Vector2D} to, double size)
+\item 
+\mbox{\label{classpn_g_f_1_1_cgdi_a36f1e8d90d46e7d21277f6c55857854d}} 
+void {\bfseries Circle} (\textbf{ Vector2D} pos, double radius)
+\item 
+\mbox{\label{classpn_g_f_1_1_cgdi_a692bf0fe3733bcc4d24a13ceb4f8df96}} 
+void {\bfseries Circle} (double x, double y, double radius)
+\item 
+\mbox{\label{classpn_g_f_1_1_cgdi_a6d160436ed6c9d745fc0e05048edda13}} 
+void {\bfseries Circle} (int x, int y, double radius)
+\item 
+\mbox{\label{classpn_g_f_1_1_cgdi_a50edef89221793ccb6079774deda23cc}} 
+void {\bfseries Set\+Pen\+Color} (int color)
+\item 
+\mbox{\label{classpn_g_f_1_1_cgdi_a90906ec1e9cb03b84df31f12b65e80fc}} 
+void {\bfseries Set\+Brush\+Color} (int color)
+\item 
+\mbox{\label{classpn_g_f_1_1_cgdi_aa4edf7aacc5a3c567676c8e75bde9308}} 
+void {\bfseries Refresh\+Screen} (H\+W\+ND h\+Wnd)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classpn_g_f_1_1_cgdi_a997cacfe78a268cbee00150a2e128f03}} 
+static \textbf{ Cgdi} $\ast$ {\bfseries Instance} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classpn_g_f_1_1_cgdi_abf81d8153532db6042f32a0995d86d3d}} 
+\index{pn\+G\+F\+::\+Cgdi@{pn\+G\+F\+::\+Cgdi}!Line\+With\+Arrow@{Line\+With\+Arrow}}
+\index{Line\+With\+Arrow@{Line\+With\+Arrow}!pn\+G\+F\+::\+Cgdi@{pn\+G\+F\+::\+Cgdi}}
+\subsubsection{Line\+With\+Arrow()}
+{\footnotesize\ttfamily void pn\+G\+F\+::\+Cgdi\+::\+Line\+With\+Arrow (\begin{DoxyParamCaption}\item[{\textbf{ Vector2D}}]{from,  }\item[{\textbf{ Vector2D}}]{to,  }\item[{double}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+ 函数名\+: Line\+With\+Arrow 绘制一个箭头 参数\+: -\/from ,-\/to ,-\/size 大小 返回值\+: void \mbox{\label{classpn_g_f_1_1_cgdi_ade48d557df09c099c8d84e506d6e5898}} 
+\index{pn\+G\+F\+::\+Cgdi@{pn\+G\+F\+::\+Cgdi}!Start\+Drawing@{Start\+Drawing}}
+\index{Start\+Drawing@{Start\+Drawing}!pn\+G\+F\+::\+Cgdi@{pn\+G\+F\+::\+Cgdi}}
+\subsubsection{Start\+Drawing()}
+{\footnotesize\ttfamily void pn\+G\+F\+::\+Cgdi\+::\+Start\+Drawing (\begin{DoxyParamCaption}\item[{H\+DC}]{hdc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+ 函数名\+: Start\+Drawing 参数\+: H\+DC 环境设备句柄 返回值\+: -\/void 说明\+: 在每次绘制前都调用此方法 \mbox{\label{classpn_g_f_1_1_cgdi_a659dab33daaac86f9d5c5ae453b6527c}} 
+\index{pn\+G\+F\+::\+Cgdi@{pn\+G\+F\+::\+Cgdi}!Stop\+Drawing@{Stop\+Drawing}}
+\index{Stop\+Drawing@{Stop\+Drawing}!pn\+G\+F\+::\+Cgdi@{pn\+G\+F\+::\+Cgdi}}
+\subsubsection{Stop\+Drawing()}
+{\footnotesize\ttfamily void pn\+G\+F\+::\+Cgdi\+::\+Stop\+Drawing (\begin{DoxyParamCaption}\item[{H\+DC}]{hdc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+ 函数名\+: Stop\+Drawing 参数\+: H\+DC 环境设备句柄 返回值\+: -\/void 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+English\+Project\+Path/peanut\+G\+F/peanut\+G\+F/Cgdi.\+h\item 
+D\+:/\+English\+Project\+Path/peanut\+G\+F/peanut\+G\+F/Cgdi.\+cpp\end{DoxyCompactItemize}

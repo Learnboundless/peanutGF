@@ -57,6 +57,15 @@ namespace pnGF{
 		return fps;
 	}
 
+	RECT BasicWin::GetScreenInfo()
+	{
+		RECT res;
+		res.left = res.top = 0;
+		res.bottom = height;
+		res.right = width;
+		return res;
+	}
+
 	WNDCLASSEX & BasicWin::readRegInfo(string jsonFilePath)
 	{
 		//读取Json数据使用的变量

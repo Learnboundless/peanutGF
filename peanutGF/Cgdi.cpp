@@ -80,6 +80,7 @@ namespace pnGF {
 		DeleteObject(m_YellowBrush);
 		DeleteObject(m_DarkGreenBrush);
 		DeleteObject(m_OrangeBrush);
+		DeleteObject(m_memDc);
 	}
 
 	Cgdi * Cgdi::Instance()
