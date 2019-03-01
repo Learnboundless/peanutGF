@@ -41,5 +41,3 @@ inline bool isEqual(double a, double b)
 
 	return false;
 }
-
-
