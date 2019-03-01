@@ -1,12 +1,10 @@
 #include "easyDx.h"
 
-easyDx::~easyDx()
-{
-}
+easyDx* easyDx::instance = nullptr;
 
-
-HRESULT easyDx::Init()
+HRESULT easyDx::Init(HWND hwnd)
 {
+	m_rlHwnd = hwnd;
 	//创建设备接口
 	LPDIRECT3D9 pD3D = NULL;
 	if (NULL == (pD3D = Direct3DCreate9(D3D_SDK_VERSION)))
@@ -28,8 +26,8 @@ HRESULT easyDx::Init()
 	//填写内容
 	D3DPRESENT_PARAMETERS d3dpp;
 	ZeroMemory(&d3dpp, sizeof(d3dpp));
-	d3dpp.BackBufferWidth = width;
-	d3dpp.BackBufferHeight = height;
+	d3dpp.BackBufferWidth = false?width:640;
+	d3dpp.BackBufferHeight = false?height:640;
 	d3dpp.BackBufferFormat = D3DFMT_A8R8G8B8;
 	d3dpp.BackBufferCount = 2;
 	d3dpp.MultiSampleType = D3DMULTISAMPLE_NONE;
@@ -44,7 +42,7 @@ HRESULT easyDx::Init()
 	d3dpp.PresentationInterval = D3DPRESENT_INTERVAL_IMMEDIATE;
 	//创建设备
 	if (FAILED(pD3D->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL,
-		hwnd, vp, &d3dpp, &m_gDev)))
+		m_rlHwnd, vp, &d3dpp, &m_gDev)))
 	{
 		return E_FAIL;
 	}
@@ -58,11 +56,33 @@ HRESULT easyDx::Init()
 
 HRESULT easyDx::Res_Init()
 {
+	if (S_OK == D3DXCreateFont(m_gDev, 18, 16, 3, 5, TRUE, DEFAULT_CHARSET,
+		OUT_DEFAULT_PRECIS, DEFAULT_QUALITY, 0,
+		"微软雅黑", &ppFont))
+	{
+		//MessageBox(hWin, "Font Ok!", "DxOK", MB_OK);
+	}
 	return E_NOTIMPL;
 }
 
 VOID easyDx::RenderModle()
 {
+	m_gDev->Clear(0, NULL, D3DCLEAR_TARGET, D3DCOLOR_XRGB(0, 0, 0), 1.0f, 0);
+	m_gDev->BeginScene();
+
+	RECT resPos;
+	resPos.top = resPos.left = 0;
+	resPos.right = 640;
+	resPos.bottom = 640;
+	//实际绘制代码
+	resPos.top = 250;
+	ppFont->DrawText(0, ("Skill Begin!"), -1, &resPos, DT_CENTER, D3DCOLOR_XRGB(rand() % 255, rand() % 128, rand() % 225));
+	resPos.top = 350;
+	ppFont->DrawText(0, ("GamePrograming I am Coming Again!"), -1, &resPos, DT_CENTER, D3DCOLOR_XRGB(255, 255, 255));
+
+
+	m_gDev->EndScene();
+	m_gDev->Present(NULL, NULL, NULL, NULL);
 	return VOID();
 }
 

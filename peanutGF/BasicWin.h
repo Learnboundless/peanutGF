@@ -26,8 +26,6 @@ class BasicWin
 	public:
 		//运行框架
 		HWND RunWindow(string jsonPath);
-		//获取刷新频率
-		float GetFPS();
 		//获取屏幕分辨率
 		RECT GetScreenInfo();
 		//鼠标事件
