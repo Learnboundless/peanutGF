@@ -1,4 +1,6 @@
 #include "easyDx.h"
+#include "renderQueue.h"
+
 
 easyDx* easyDx::instance = nullptr;
 
@@ -49,6 +51,7 @@ HRESULT easyDx::Init(HWND hwnd)
 	SAFE_RELEASE(pD3D);
 	if (!(S_OK == Res_Init()))
 	{
+		m_renderQueue=renderQue::Get();
 		return E_FAIL;
 	}
 	return S_OK;
@@ -56,6 +59,8 @@ HRESULT easyDx::Init(HWND hwnd)
 
 HRESULT easyDx::Res_Init()
 {
+	m_renderQueue->ParseRes(m_gDev);
+
 	if (S_OK == D3DXCreateFont(m_gDev, 18, 16, 3, 5, TRUE, DEFAULT_CHARSET,
 		OUT_DEFAULT_PRECIS, DEFAULT_QUALITY, 0,
 		"Î¢ÈíÑÅºÚ", &ppFont))
@@ -69,8 +74,10 @@ VOID easyDx::RenderModle()
 {
 	m_gDev->Clear(0, NULL, D3DCLEAR_TARGET, D3DCOLOR_XRGB(0, 0, 0), 1.0f, 0);
 	m_gDev->BeginScene();
+	
 
-	RECT resPos;
+	m_renderQueue->Render();
+	/*RECT resPos;
 	resPos.top = resPos.left = 0;
 	resPos.right = 640;
 	resPos.bottom = 640;
@@ -79,7 +86,7 @@ VOID easyDx::RenderModle()
 	ppFont->DrawText(0, ("Skill Begin!"), -1, &resPos, DT_CENTER, D3DCOLOR_XRGB(rand() % 255, rand() % 128, rand() % 225));
 	resPos.top = 350;
 	ppFont->DrawText(0, ("GamePrograming I am Coming Again!"), -1, &resPos, DT_CENTER, D3DCOLOR_XRGB(255, 255, 255));
-
+	*/
 
 	m_gDev->EndScene();
 	m_gDev->Present(NULL, NULL, NULL, NULL);

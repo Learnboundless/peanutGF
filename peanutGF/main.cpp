@@ -6,6 +6,7 @@
 #include <math.h>
 #include <time.h>
 #include "easyDx.h"
+#include "Text.h"
 using namespace pnGF;
 
 #define SAFE_RELEASE(p) {if(p) { (p)->Release(); (p)=NULL; }}
@@ -69,6 +70,10 @@ int main() {
 	//HWND hWin2 = BWind.RunWindow("Test.json");
 	hWin = BWind.RunWindow("Test.json");
 	HDC hdc = GetDC(hWin);
+	Text mytest("开始",-10,-25, D3DCOLOR_XRGB(100,100,200));
+	Text mytest3("层3", 50, 22, D3DCOLOR_XRGB(0, 255, 120), 2);
+	Text mytest2("层2", 50, 12, D3DCOLOR_XRGB(255, 0, 0),2);
+	
 	//HDC gdihdc = GetDC(hWin2);
 /*
 	if (S_OK== Direct3D_Init(hWin))
@@ -91,8 +96,7 @@ int main() {
 		ScreenToClient(hWin, &cursorPos);
 		//std::cout << "鼠标位置(客户端坐标系)信息捕获(" << cursorPos.x << "," << cursorPos.y << ")" << std::endl;
 		//std::cout <<"FPS值:"<< BWind.GetFPS() << std::endl;
-		
-		
+		mytest.SetFontText("FPS:"+to_string((int)GetFPS()));
 		if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
 		{
 			TranslateMessage(&msg);
@@ -103,7 +107,7 @@ int main() {
 			eDx->RenderModle();
 			//Direct3D_Render(hWin);
 			//Sleep(33.3);
-			FixedFrameTimeSleep(30);
+			FixedFrameTimeSleep(10);
 			//system("cls"); 
 		}
 	}

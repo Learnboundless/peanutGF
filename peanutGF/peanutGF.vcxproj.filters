@@ -43,6 +43,12 @@
     <Filter Include="源文件\Common">
       <UniqueIdentifier>{f9bdd275-134b-4a55-87d8-a2b6ac6ddd2e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\easyDx\BaseGUI">
+      <UniqueIdentifier>{7b5fafe3-13a7-40bf-a1bd-1ed475e2e160}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\easyDx\BaseGUI">
+      <UniqueIdentifier>{d603cc30-5a70-43fb-96a4-df747082963f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -65,6 +71,9 @@
     </ClCompile>
     <ClCompile Include="renderQueue.cpp">
       <Filter>源文件\easyDx</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>源文件\easyDx\BaseGUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +100,9 @@
     </ClInclude>
     <ClInclude Include="redObj.h">
       <Filter>头文件\easyDx</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>头文件\easyDx\BaseGUI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

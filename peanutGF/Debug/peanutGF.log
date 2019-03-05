@@ -1,5 +1,7 @@
 ﻿D:\IDE\Visual Studio\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: 中间目录(Debug\)包含从另一个项目(peanutGF.vcxproj)共享的文件。   这会导致错误的清除和重新生成行为。
+  Text.cpp
   main.cpp
 d:\englishprojectpath\peanutgf\peanutgf\cgdi.h(248): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
 d:\englishprojectpath\peanutgf\peanutgf\main.cpp(148): warning C4305: “+=”: 从“double”到“float”截断
+  正在生成代码...
   peanutGF.vcxproj -> D:\EnglishProjectPath\peanutGF\Debug\peanutGFCore.exe

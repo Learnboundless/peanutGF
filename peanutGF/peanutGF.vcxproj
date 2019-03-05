@@ -132,6 +132,7 @@
     <ClInclude Include="easyDx.h" />
     <ClInclude Include="redObj.h" />
     <ClInclude Include="renderQueue.h" />
+    <ClInclude Include="Text.h" />
     <ClInclude Include="utils.h" />
     <ClInclude Include="vector2D.h" />
   </ItemGroup>
@@ -141,6 +142,7 @@
     <ClCompile Include="easyDx.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="renderQueue.cpp" />
+    <ClCompile Include="Text.cpp" />
     <ClCompile Include="vector2D.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -17,6 +17,8 @@
 #include <d3dx9.h>
 
 
+class renderQue;
+
 
 /*!
  * \class easyDx
@@ -50,7 +52,7 @@ private:
 	LPDIRECT3DDEVICE9 m_gDev;//Dx环境设备
 	HWND m_rlHwnd; //用于将我们的Dx设备与我们的窗体进行关联
 	int width, height;
-
+	renderQue* m_renderQueue;
 
 	//test
 	//字体

@@ -1,7 +1,10 @@
 #pragma once
 
-#include <queue>
-#include "redObj.h"
+#include<queue> 
+#include<vector> 
+#include <d3d9.h>
+
+class redObj;
 
 class renderQue
 {
@@ -19,7 +22,14 @@ private:
 
 private:
 	//‰÷»æ∂”¡–
-
+	std::priority_queue<redObj*> m_redQue;
+	std::vector<redObj*> m_backVector;
+public:
+	bool Push(redObj* obj);
+	redObj* Top();
+	void Pop();
+	void ParseRes(LPDIRECT3DDEVICE9 dev);
+	void Render();
 };
 
 static renderQue* redQue = renderQue::Get();
